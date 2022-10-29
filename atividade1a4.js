@@ -15,8 +15,23 @@ novamente com novas informações.*/
 
 var nome 
 var salario 
+var aumento
 
 function CadastrarUsuario() {
     nome = prompt("insira seu nome")
-    salario = parseFloatprompt("insira seu salario")
+    salario = parseFloat(prompt("insira seu salario"))
+    if(salario <= 1500){
+        aumento = 1.20
+    }else if (salario > 1500 && salario >= 2000){
+        aumento = 1.15
+    }else if (salario > 2000 && salario <= 3000){
+        aumento = 1.10
+    }else {
+        aumento = 1.05
+    }
+}
+
+function CalcularAumento(salario, aumento){
+    var salarioAumento = salario * aumento
+    return salarioAumento
 }
