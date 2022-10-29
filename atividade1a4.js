@@ -16,18 +16,23 @@ novamente com novas informações.*/
 var nome 
 var salario 
 var aumento
+var porcentagemAumento
 
 function CadastrarUsuario() {
     nome = prompt("insira seu nome")
     salario = parseFloat(prompt("insira seu salario"))
     if(salario <= 1500){
         aumento = 1.20
+        porcentagemAumento = "20%"
     }else if (salario > 1500 && salario >= 2000){
         aumento = 1.15
+        porcentagemAumento = "15%"
     }else if (salario > 2000 && salario <= 3000){
         aumento = 1.10
+        porcentagemAumento = "10%"
     }else {
         aumento = 1.05
+        porcentagemAumento = "5%"
     }
 }
 
@@ -35,3 +40,4 @@ function CalcularAumento(salario, aumento){
     var salarioAumento = salario * aumento
     return salarioAumento
 }
+console.log("seu nome é" + nome + "seu salário atual: " + salario + " você receberá: " + porcentagemAumento + " de aumento e seu salário reajustado será de: " + CalcularAumento(salario, aumento))
